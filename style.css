@@ -22,7 +22,7 @@ body {
     color: #ff2a85;
 }
 
-/* Barra de navegación */
+/* ============ NAVBAR ============ */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -62,6 +62,12 @@ body {
     color: #fff;
 }
 
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
 .hire-btn {
     background-color: #ff2a85;
     color: #fff;
@@ -71,13 +77,55 @@ body {
     font-weight: 700;
     font-size: 0.9rem;
     transition: opacity 0.3s;
+    white-space: nowrap;
 }
 
 .hire-btn:hover {
     opacity: 0.85;
 }
 
-/* Portada */
+/* Selector de idioma */
+.lang-switch {
+    display: flex;
+    gap: 8px;
+}
+
+.lang-btn {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background: none;
+    cursor: pointer;
+    opacity: 0.5;
+    overflow: hidden;
+    transition: opacity 0.3s, border-color 0.3s;
+}
+
+.lang-btn img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.lang-btn:hover {
+    opacity: 1;
+}
+
+.lang-btn.active {
+    opacity: 1;
+    border-color: #ff2a85;
+}
+
+.lang-btn:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* ============ PORTADA ============ */
 .hero-section {
     padding: 40px 60px 0;
     max-width: 1400px;
@@ -91,7 +139,7 @@ body {
     border-radius: 12px;
 }
 
-/* Sección Proyectos */
+/* ============ PROYECTOS ============ */
 .projects-section {
     padding: 60px;
     max-width: 1400px;
@@ -227,17 +275,16 @@ body {
     letter-spacing: 1px;
 }
 
-/* Filas dobles y triples */
+/* Fila doble. La columna de la animación es más ancha y ambas imágenes llenan su tarjeta */
 .projects-row-double {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.55fr 1fr;
     gap: 30px;
 }
 
-.projects-row-triple {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
+.projects-row-double .project-card img {
+    height: 100%;
+    object-fit: cover;
 }
 
 .projects-row-double .card-content-overlay {
@@ -246,6 +293,13 @@ body {
 
 .projects-row-double .project-card h3 {
     font-size: 1.5rem;
+}
+
+/* Fila triple */
+.projects-row-triple {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
 }
 
 .projects-row-triple .card-content-overlay {
@@ -263,6 +317,9 @@ body {
         display: flex;
         flex-direction: column;
     }
+    .projects-row-double .project-card img {
+        height: auto;
+    }
     .card-content-overlay {
         position: static;
         opacity: 1;
@@ -274,28 +331,43 @@ body {
     }
 }
 
-/* Banner Frase */
+/* ============ FRASE ============ */
 .banner-phrase {
-    padding: 100px 60px;
-    text-align: center;
+    padding: 110px 60px;
     background: #0b0b0b;
 }
 
-.banner-phrase h2 {
-    font-size: 4vw;
+.phrase {
+    display: table;
+    margin: 0 auto;
+    font-size: clamp(1.5rem, 3.7vw, 4rem);
     font-weight: 900;
-    line-height: 1.1;
+    font-style: italic;
+    line-height: 1.12;
     text-transform: uppercase;
 }
 
-.banner-phrase span {
-    color: #ff2a85;
-    font-style: italic;
+.phrase-line {
+    display: block;
+    white-space: nowrap;
 }
 
-/* ============ ABOUT ============ */
+.phrase-line:nth-child(2) {
+    margin-left: 3.5em;
+}
+
+.phrase-line:nth-child(3) {
+    margin-left: 7em;
+}
+
+.phrase em {
+    font-style: italic;
+    color: #ff2a85;
+}
+
+/* ============ ABOUT ME ============ */
 .about-section {
-    padding: 130px 60px;
+    padding: 130px clamp(24px, 8vw, 160px);
     background: #111;
     border-top: 1px solid #222;
     border-bottom: 1px solid #222;
@@ -303,11 +375,11 @@ body {
 }
 
 .about-content {
-    max-width: 1300px;
+    max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 90px;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
     align-items: center;
 }
 
@@ -316,7 +388,7 @@ body {
     isolation: isolate;
     display: inline-block;
     white-space: nowrap;
-    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-size: clamp(2.8rem, 5.4vw, 5rem);
     font-weight: 900;
     font-style: italic;
     line-height: 1;
@@ -336,24 +408,24 @@ body {
 
 .about-text p {
     color: #fff;
-    font-size: clamp(1rem, 1.3vw, 1.25rem);
-    line-height: 2;
-    margin-bottom: 2em;
+    font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+    line-height: 1.9;
+    margin-bottom: 1.6em;
 }
 
 .about-text .about-quote {
     color: #ff2a85;
     font-weight: 800;
     font-style: italic;
-    font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+    font-size: clamp(1.05rem, 1.35vw, 1.25rem);
     margin-bottom: 0;
 }
 
 /* Foto completa, con cuadro rosa atrás y línea alrededor */
 .about-image-box {
     position: relative;
-    width: min(72%, 440px);
-    margin: 0 auto;
+    width: min(88%, 560px);
+    margin: 0 8% 0 auto;
 }
 
 .about-photo {
@@ -438,7 +510,7 @@ body {
     font-weight: 900;
     font-style: italic;
     line-height: 0.92;
-    padding: clamp(16px, 2.2vw, 30px) clamp(22px, 3.2vw, 46px) clamp(16px, 2.2vw, 30px) clamp(22px, 3.2vw, 46px);
+    padding: clamp(16px, 2.2vw, 30px) clamp(22px, 3.2vw, 46px);
     border-radius: 40px 0 40px 0;
 }
 
@@ -479,15 +551,15 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 20px clamp(20px, 4vw, 60px);
+    padding: clamp(60px, 7vw, 100px) clamp(20px, 3.5vw, 50px) clamp(50px, 6vw, 90px) clamp(24px, 4vw, 60px);
 }
 
 .services-card h3 {
-    font-size: clamp(1.8rem, 3.4vw, 3rem);
+    font-size: clamp(2rem, 3.8vw, 3.4rem);
     font-weight: 900;
     font-style: italic;
     color: #ff2a85;
-    margin-bottom: 1em;
+    margin-bottom: 0.9em;
 }
 
 .services-card ul {
@@ -498,10 +570,11 @@ body {
     display: flex;
     align-items: baseline;
     gap: 0.9em;
-    font-size: clamp(1rem, 1.7vw, 1.6rem);
+    font-size: clamp(1.1rem, 2.1vw, 2rem);
     font-weight: 800;
     font-style: italic;
-    padding: 0.6em 0;
+    line-height: 1.25;
+    padding: 0.55em 0;
     color: #fff;
 }
 
@@ -514,34 +587,35 @@ body {
 
 /* ============ CONTACT ============ */
 .footer-section {
-    padding: 170px 60px 220px;
+    padding: clamp(80px, 9vw, 120px) clamp(24px, 8vw, 160px) clamp(90px, 10vw, 140px);
     background: #0f0f0f;
     border-top: 1px solid #ff2a85;
     scroll-margin-top: 80px;
 }
 
 .footer-inner {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .get-in-touch {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     letter-spacing: 4px;
     color: #888;
     display: block;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
 }
 
 .footer-title {
-    font-size: clamp(2.4rem, 7vw, 6.5rem);
+    font-size: clamp(2rem, 4.6vw, 4.2rem);
     font-weight: 900;
     font-style: italic;
-    line-height: 1.05;
-    margin-bottom: 90px;
+    line-height: 1.08;
+    margin-bottom: 56px;
 }
 
 .footer-title i {
+    font-style: italic;
     color: #ff2a85;
 }
 
@@ -555,8 +629,8 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 14px;
-    padding: 48px 56px;
+    gap: 10px;
+    padding: 34px 40px;
     background: #181818;
     border: 1px solid #333;
     text-decoration: none;
@@ -571,21 +645,22 @@ body {
 
 .contact-label {
     color: #999;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .contact-link {
-    font-size: clamp(1.2rem, 2.4vw, 2.1rem);
+    font-size: clamp(1.1rem, 1.9vw, 1.6rem);
     font-weight: 500;
     word-break: break-word;
+    padding-right: 40px;
 }
 
 .contact-arrow {
     position: absolute;
-    top: 36px;
-    right: 44px;
+    top: 26px;
+    right: 32px;
     color: #ff2a85;
-    font-size: 2rem;
+    font-size: 1.6rem;
     line-height: 1;
 }
 
@@ -598,6 +673,9 @@ body {
     }
     .nav-links {
         gap: 18px;
+    }
+    .nav-right {
+        gap: 14px;
     }
     .hero-section {
         padding: 20px 20px 0;
@@ -618,19 +696,30 @@ body {
     .projects-row-triple {
         grid-template-columns: 1fr;
     }
-    .banner-phrase {
-        padding: 60px 20px;
-    }
-    .banner-phrase h2 {
-        font-size: 8vw;
+    .projects-row-double .project-card img {
+        height: auto;
     }
     .section-title {
         font-size: 2rem;
     }
 
+    /* Frase */
+    .banner-phrase {
+        padding: 60px 20px;
+    }
+    .phrase {
+        font-size: 4.6vw;
+    }
+    .phrase-line:nth-child(2) {
+        margin-left: 1.2em;
+    }
+    .phrase-line:nth-child(3) {
+        margin-left: 2.4em;
+    }
+
     /* About */
     .about-section {
-        padding: 70px 20px;
+        padding: 70px 24px;
     }
     .about-content {
         grid-template-columns: 1fr;
@@ -641,6 +730,7 @@ body {
     }
     .about-image-box {
         width: 68%;
+        margin: 0 auto;
     }
 
     /* Skills */
@@ -660,26 +750,26 @@ body {
     }
     .services-card {
         margin-top: 30px;
-        padding: 30px 24px;
+        padding: 36px 24px;
         border: 2px solid #ff2a85;
         border-radius: 30px;
     }
 
     /* Contact */
     .footer-section {
-        padding: 90px 20px 110px;
+        padding: 70px 24px 90px;
     }
     .footer-title {
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
     .footer-contact-grid {
         grid-template-columns: 1fr;
     }
     .contact-box {
-        padding: 36px 28px;
+        padding: 28px 24px;
     }
     .contact-arrow {
-        top: 26px;
-        right: 26px;
+        top: 20px;
+        right: 22px;
     }
 }
