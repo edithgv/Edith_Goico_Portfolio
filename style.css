@@ -443,3 +443,46 @@ body {
 .contact-link:hover {
     color: #ff2a85;
 }
+/* CONEXIÓN DE IMÁGENES REALES A CADA TARJETA */
+
+/* 1. Pawfreshy */
+.projects-grid > .project-card:nth-child(1) .card-background {
+    background-image: url('pawfreshy.jpg');
+}
+
+/* 2. La Animación No Es Un Género */
+.projects-row-double > .project-card:nth-child(1) .card-background {
+    background-image: url('animacion.jpg');
+}
+
+/* 3. Sea of Thoughts */
+.projects-row-double > .project-card:nth-child(2) .card-background {
+    background-image: url('portada_portfolio.jpg'); /* O sube una con nombre sea-thoughts.jpg */
+}
+
+/* 4. Room Service */
+.projects-row-triple > .project-card:nth-child(1) .card-background {
+    background-image: url('room-service.jpg');
+}
+
+/* 5. Banco de Óvulos */
+.projects-row-triple > .project-card:nth-child(2) .card-background {
+    background-image: url('banco-ovulos.jpg');
+}
+
+/* 6. La Barriga */
+.projects-row-triple > .project-card:nth-child(3) .card-background {
+    background-image: url('la-barriga.jpg');
+}
+
+/* 7. La Butaca Incómoda */
+.projects-grid > .project-card:last-child .card-background {
+    background-image: url('la-butaca.jpg');
+}
+
+/* Foto de Perfil en la sección About */
+.profile-frame {
+    background-image: url('foto_persona.png');
+    background-size: cover;
+    background-position: center;
+}
