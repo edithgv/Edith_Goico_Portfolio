@@ -44,7 +44,7 @@
                     <span class="tag-label">BRANDING</span>
                     <h3>PAWFRESHY</h3>
                     <p class="card-desc">Developed the visual branding for a pet clothing brand, including the brand identity, color palette, typography, and graphic elements.</p>
-                    <a href="#" class="project-tag-btn">BETA PROJECT</a>
+                    <span class="project-tag-btn">BETA PROJECT</span>
                 </div>
             </div>
 
@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="project-card" data-category="editorial">
-                    <img src="sea-of-thoughts.jpg" alt="Portada Sea of Thoughts">
+                    <img src="sea_of_thoughts.png" alt="Portada Sea of Thoughts">
                     <div class="card-content-overlay">
                         <span class="tag-label">EDITORIAL DESIGN</span>
                         <h3>SEA OF THOUGHTS</h3>
@@ -101,7 +101,6 @@
                     <span class="tag-label">BRANDING</span>
                     <h3>LA BUTACA INCÓMODA</h3>
                     <p class="card-desc">Developed the branding for a film criticism account, including a distinctive character to strengthen its visual identity and social media presence.</p>
-                    <a href="#" class="project-tag-btn">SOCIAL MEDIA CONTENT</a>
                 </div>
             </div>
         </div>
@@ -116,39 +115,50 @@
     <section id="about" class="about-section">
         <div class="about-content">
             <div class="about-text">
-                <h2 class="section-title">ABOUT</h2>
+                <h2 class="about-title" data-text="ABOUT">ABOUT</h2>
                 <p>I'm Edith Goico, a Dominican graphic designer working across branding, editorial design, and poster design. I've worked on projects ranging from complete brand identities to editorial covers and theatrical posters, always looking for ways to turn ideas into clear and engaging visual work.</p>
                 <p>I have a technical degree in Audiovisuals and Entertainment and am currently pursuing a degree in Film and Multimedia Production. I currently work as a freelance designer, collaborating with clients and creatives.</p>
                 <p class="about-quote">Let's give shape to your ideas.</p>
             </div>
             <div class="about-image-box">
-                <div class="profile-frame"></div>
+                <div class="photo-outline"></div>
+                <div class="photo-block"></div>
+                <img src="foto_persona.png" alt="Retrato de Edith Goico" class="about-photo">
             </div>
         </div>
     </section>
 
     <!-- Sección Technical Skills & Services -->
     <section class="skills-section">
-        <h2 class="section-title">TECHNICAL <i>SKILLS</i></h2>
-        <div class="skills-grid">
+        <h2 class="section-title skills-title">TECHNICAL <i>SKILLS</i></h2>
+
+        <div class="skills-wrap">
             <div class="software-card">
-                <h3>SOFT<span class="pink-text">WARE</span></h3>
+                <div class="software-tab">SOFT<span>WARE</span></div>
                 <div class="software-icons">
-                    <span>Pr</span>
-                    <span>Ai</span>
-                    <span>Ae</span>
-                    <span>Id</span>
-                    <span>Ps</span>
-                    <span>Fi</span>
+                    <div class="icon-row icon-row-top">
+                        <img src="premiere.webp" alt="Adobe Premiere Pro">
+                        <img src="da_vinci.png" alt="DaVinci Resolve">
+                        <img src="after_effects.webp" alt="Adobe After Effects">
+                    </div>
+                    <div class="icon-row">
+                        <img src="indesign.webp" alt="Adobe InDesign">
+                        <!-- Cuando subas la imagen de Lightroom, quita las flechas de esta línea y ajusta el nombre del archivo -->
+                        <!-- <img src="lightroom.webp" alt="Adobe Lightroom"> -->
+                        <img src="photoshop.webp" alt="Adobe Photoshop">
+                        <img src="illustrator.webp" alt="Adobe Illustrator">
+                        <img src="figma.png" alt="Figma">
+                    </div>
                 </div>
             </div>
+
             <div class="services-card">
                 <h3>SERVICES</h3>
                 <ul>
-                    <li>★ Branding</li>
-                    <li>★ Video Editing</li>
-                    <li>★ Social Media Content</li>
-                    <li>★ Editorial Design</li>
+                    <li>Branding</li>
+                    <li>Video Editing</li>
+                    <li>Social Media Content</li>
+                    <li>Editorial Design</li>
                 </ul>
             </div>
         </div>
@@ -156,16 +166,20 @@
 
     <!-- Footer / Contacto -->
     <footer id="contact" class="footer-section">
-        <span class="get-in-touch">GET IN TOUCH</span>
-        <h2 class="footer-title">Let's make something <i>worth remembering</i>.</h2>
-        <div class="footer-contact-grid">
-            <div class="contact-box">
-                <span class="contact-label">Email</span>
-                <a href="mailto:edithgoicova@gmail.com" class="contact-link">edithgoicova@gmail.com ↗</a>
-            </div>
-            <div class="contact-box">
-                <span class="contact-label">LinkedIn</span>
-                <a href="#" class="contact-link">Edith Goico ↗</a>
+        <div class="footer-inner">
+            <span class="get-in-touch">GET IN TOUCH</span>
+            <h2 class="footer-title">Let's make something <i>worth remembering</i>.</h2>
+            <div class="footer-contact-grid">
+                <a class="contact-box" href="mailto:edithgoicova@gmail.com">
+                    <span class="contact-label">Email</span>
+                    <span class="contact-link">edithgoicova@gmail.com</span>
+                    <span class="contact-arrow">↗</span>
+                </a>
+                <a class="contact-box" href="https://www.linkedin.com/in/edith-goico-4761b6397/" target="_blank" rel="noopener">
+                    <span class="contact-label">LinkedIn</span>
+                    <span class="contact-link">Edith Goico</span>
+                    <span class="contact-arrow">↗</span>
+                </a>
             </div>
         </div>
     </footer>
