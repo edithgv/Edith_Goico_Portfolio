@@ -168,7 +168,7 @@ body {
     color: #fff;
 }
 
-/* Tarjetas de Proyectos */
+/* Tarjetas de Proyectos con Imágenes Visibles */
 .projects-grid {
     display: flex;
     flex-direction: column;
@@ -177,46 +177,28 @@ body {
 
 .project-card {
     position: relative;
-    background: #141414;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border: 1px solid #222;
     border-radius: 12px;
     overflow: hidden;
-    min-height: 450px;
+    min-height: 480px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 40px;
-    transition: border-color 0.3s;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .project-card:hover {
     border-color: #ff2a85;
-}
-
-.card-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0.4;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    z-index: 1;
-}
-
-.project-card:hover .card-background {
-    opacity: 0.9;
-    transform: scale(1.03);
+    transform: translateY(-4px);
 }
 
 .card-content-overlay {
-    position: relative;
-    z-index: 2;
-    background: linear-gradient(to top, rgba(11,11,11,0.9) 30%, transparent);
-    margin: -40px;
+    background: linear-gradient(to top, rgba(11, 11, 11, 0.95) 20%, rgba(11, 11, 11, 0.6) 70%, transparent 100%);
     padding: 40px;
+    width: 100%;
 }
 
 .tag-label {
@@ -255,6 +237,35 @@ body {
     letter-spacing: 1px;
 }
 
+/* Enlaces de Imágenes directas a cada tarjeta */
+.card-pawfreshy {
+    background-image: url('pawfreshy.jpg');
+}
+
+.card-animacion {
+    background-image: url('animacion.jpg');
+}
+
+.card-sea {
+    background-image: url('portada_portfolio.jpg');
+}
+
+.card-roomservice {
+    background-image: url('room-service.jpg');
+}
+
+.card-banco {
+    background-image: url('banco-ovulos.jpg');
+}
+
+.card-barriga {
+    background-image: url('la-barriga.jpg');
+}
+
+.card-butaca {
+    background-image: url('la-butaca.jpg');
+}
+
 /* Filas dobles y triples */
 .projects-row-double {
     display: grid;
@@ -269,7 +280,7 @@ body {
 }
 
 .projects-row-triple .project-card {
-    min-height: 350px;
+    min-height: 380px;
 }
 
 /* Banner Frase */
@@ -328,6 +339,7 @@ body {
     background: #1a1a1a;
     border: 2px solid #ff2a85;
     border-radius: 12px;
+    background-image: url('foto_persona.png');
     background-size: cover;
     background-position: center;
 }
@@ -442,47 +454,4 @@ body {
 
 .contact-link:hover {
     color: #ff2a85;
-}
-/* CONEXIÓN DE IMÁGENES REALES A CADA TARJETA */
-
-/* 1. Pawfreshy */
-.projects-grid > .project-card:nth-child(1) .card-background {
-    background-image: url('pawfreshy.jpg');
-}
-
-/* 2. La Animación No Es Un Género */
-.projects-row-double > .project-card:nth-child(1) .card-background {
-    background-image: url('animacion.jpg');
-}
-
-/* 3. Sea of Thoughts */
-.projects-row-double > .project-card:nth-child(2) .card-background {
-    background-image: url('portada_portfolio.jpg'); /* O sube una con nombre sea-thoughts.jpg */
-}
-
-/* 4. Room Service */
-.projects-row-triple > .project-card:nth-child(1) .card-background {
-    background-image: url('room-service.jpg');
-}
-
-/* 5. Banco de Óvulos */
-.projects-row-triple > .project-card:nth-child(2) .card-background {
-    background-image: url('banco-ovulos.jpg');
-}
-
-/* 6. La Barriga */
-.projects-row-triple > .project-card:nth-child(3) .card-background {
-    background-image: url('la-barriga.jpg');
-}
-
-/* 7. La Butaca Incómoda */
-.projects-grid > .project-card:last-child .card-background {
-    background-image: url('la-butaca.jpg');
-}
-
-/* Foto de Perfil en la sección About */
-.profile-frame {
-    background-image: url('foto_persona.png');
-    background-size: cover;
-    background-position: center;
 }
