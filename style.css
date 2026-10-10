@@ -7,6 +7,10 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #0b0b0b;
     color: #ffffff;
@@ -73,48 +77,18 @@ body {
     opacity: 0.85;
 }
 
-/* Hero Section */
+/* Portada */
 .hero-section {
-    padding: 80px 60px;
-    text-align: center;
-}
-
-.hero-top-labels, .hero-footer-labels {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    color: #aaa;
-    max-width: 1200px;
+    padding: 40px 60px 0;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
-.hero-main-title h1 {
-    font-size: 11vw;
-    font-weight: 900;
-    line-height: 1;
-    letter-spacing: -2px;
-    margin: 30px 0;
-    text-transform: uppercase;
-}
-
-.year-badge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #ff2a85;
-    color: #fff;
-    font-size: 3vw;
-    width: 8vw;
-    height: 8vw;
-    border-radius: 50%;
-    vertical-align: middle;
-}
-
-.arrow-down {
-    color: #ff2a85;
-    font-size: 1.5rem;
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
 }
 
 /* Sección Proyectos */
@@ -122,6 +96,7 @@ body {
     padding: 60px;
     max-width: 1400px;
     margin: 0 auto;
+    scroll-margin-top: 80px;
 }
 
 .projects-header {
@@ -168,7 +143,7 @@ body {
     color: #fff;
 }
 
-/* Tarjetas de Proyectos con Imágenes Visibles */
+/* Tarjetas de proyectos */
 .projects-grid {
     display: flex;
     flex-direction: column;
@@ -177,28 +152,42 @@ body {
 
 .project-card {
     position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    overflow: hidden;
     border: 1px solid #222;
     border-radius: 12px;
-    overflow: hidden;
-    min-height: 480px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    background: #141414;
+    transition: border-color 0.3s ease;
+}
+
+.project-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
 }
 
 .project-card:hover {
     border-color: #ff2a85;
-    transform: translateY(-4px);
+}
+
+.project-card:hover img {
+    transform: scale(1.04);
 }
 
 .card-content-overlay {
-    background: linear-gradient(to top, rgba(11, 11, 11, 0.95) 20%, rgba(11, 11, 11, 0.6) 70%, transparent 100%);
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     padding: 40px;
-    width: 100%;
+    background: linear-gradient(to top, rgba(11, 11, 11, 0.92) 15%, rgba(11, 11, 11, 0.4) 60%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.project-card:hover .card-content-overlay {
+    opacity: 1;
 }
 
 .tag-label {
@@ -227,6 +216,7 @@ body {
 
 .project-tag-btn {
     display: inline-block;
+    align-self: flex-start;
     background-color: #ff2a85;
     color: #fff;
     padding: 8px 18px;
@@ -235,35 +225,6 @@ body {
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 1px;
-}
-
-/* Enlaces de Imágenes directas a cada tarjeta */
-.card-pawfreshy {
-    background-image: url('pawfreshy.jpg');
-}
-
-.card-animacion {
-    background-image: url('animacion.jpg');
-}
-
-.card-sea {
-    background-image: url('portada_portfolio.jpg');
-}
-
-.card-roomservice {
-    background-image: url('room-service.jpg');
-}
-
-.card-banco {
-    background-image: url('banco-ovulos.jpg');
-}
-
-.card-barriga {
-    background-image: url('la-barriga.jpg');
-}
-
-.card-butaca {
-    background-image: url('la-butaca.jpg');
 }
 
 /* Filas dobles y triples */
@@ -279,8 +240,38 @@ body {
     gap: 30px;
 }
 
-.projects-row-triple .project-card {
-    min-height: 380px;
+.projects-row-double .card-content-overlay {
+    padding: 30px;
+}
+
+.projects-row-double .project-card h3 {
+    font-size: 1.5rem;
+}
+
+.projects-row-triple .card-content-overlay {
+    padding: 24px;
+}
+
+.projects-row-triple .project-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0;
+}
+
+/* En pantallas sin hover (celulares) el texto va debajo de la imagen */
+@media (hover: none) {
+    .project-card {
+        display: flex;
+        flex-direction: column;
+    }
+    .card-content-overlay {
+        position: static;
+        opacity: 1;
+        background: none;
+        padding: 20px;
+    }
+    .project-card:hover img {
+        transform: none;
+    }
 }
 
 /* Banner Frase */
@@ -308,6 +299,7 @@ body {
     background: #111;
     border-top: 1px solid #222;
     border-bottom: 1px solid #222;
+    scroll-margin-top: 80px;
 }
 
 .about-content {
@@ -403,6 +395,7 @@ body {
     padding: 100px 60px 60px 60px;
     background: #080808;
     border-top: 1px solid #222;
+    scroll-margin-top: 80px;
 }
 
 .get-in-touch {
@@ -454,4 +447,62 @@ body {
 
 .contact-link:hover {
     color: #ff2a85;
+}
+
+/* Responsive (tablets y celulares) */
+@media (max-width: 900px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 16px 20px;
+    }
+    .nav-links {
+        gap: 18px;
+    }
+    .hero-section {
+        padding: 20px 20px 0;
+    }
+    .projects-section,
+    .skills-section {
+        padding: 40px 20px;
+    }
+    .projects-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .filter-buttons {
+        flex-wrap: wrap;
+        border-radius: 20px;
+    }
+    .projects-row-double,
+    .projects-row-triple,
+    .about-content,
+    .skills-grid,
+    .footer-contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .banner-phrase {
+        padding: 60px 20px;
+    }
+    .banner-phrase h2 {
+        font-size: 8vw;
+    }
+    .about-section {
+        padding: 50px 20px;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .footer-section {
+        padding: 60px 20px 40px;
+    }
+    .footer-title {
+        font-size: 2rem;
+    }
+    .contact-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
 }
