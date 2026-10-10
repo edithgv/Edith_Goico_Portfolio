@@ -12,59 +12,69 @@
     <nav class="navbar">
         <div class="nav-logo">EDITH GOICO<span>.</span></div>
         <ul class="nav-links">
-            <li><a href="#work">Work</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#work" data-i18n="nav.work">Work</a></li>
+            <li><a href="#about" data-i18n="nav.about">About</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
-        <a href="#contact" class="hire-btn">Hire me</a>
+        <div class="nav-right">
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="en" aria-label="English" aria-pressed="true">
+                    <img src="english.png" alt="English">
+                </button>
+                <button class="lang-btn" data-lang="es" aria-label="Español" aria-pressed="false">
+                    <img src="spanish.png" alt="Español">
+                </button>
+            </div>
+            <a href="#contact" class="hire-btn" data-i18n="nav.hire">Hire me</a>
+        </div>
     </nav>
 
     <!-- Portada -->
     <header class="hero-section">
-        <img src="portada_portfolio.jpg" alt="Edith Goico, diseñadora gráfica. Portfolio" class="hero-img">
+        <img src="portada_portfolio.jpg" alt="Edith Goico, graphic designer. Portfolio" class="hero-img" data-i18n-alt="alt.hero">
     </header>
 
     <!-- Sección de Proyectos -->
     <main id="work" class="projects-section">
         <div class="projects-header">
-            <h2 class="section-title">Selected <i>work</i></h2>
+            <h2 class="section-title" data-i18n-html="work.title">Selected <i>work</i></h2>
             <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="branding">Branding</button>
-                <button class="filter-btn" data-filter="poster">Poster</button>
-                <button class="filter-btn" data-filter="editorial">Editorial Design</button>
+                <button class="filter-btn active" data-filter="all" data-i18n="filter.all">All</button>
+                <button class="filter-btn" data-filter="branding" data-i18n="filter.branding">Branding</button>
+                <button class="filter-btn" data-filter="poster" data-i18n="filter.poster">Poster</button>
+                <button class="filter-btn" data-filter="editorial" data-i18n="filter.editorial">Editorial Design</button>
             </div>
         </div>
 
         <div class="projects-grid">
             <!-- Pawfreshy -->
             <div class="project-card" data-category="branding">
-                <img src="pawfreshy.jpg" alt="Branding de Pawfreshy">
+                <img src="pawfreshy.jpg" alt="Pawfreshy branding" data-i18n-alt="alt.pawfreshy">
                 <div class="card-content-overlay">
-                    <span class="tag-label">BRANDING</span>
+                    <span class="tag-label" data-i18n="tag.branding">BRANDING</span>
                     <h3>PAWFRESHY</h3>
-                    <p class="card-desc">Developed the visual branding for a pet clothing brand, including the brand identity, color palette, typography, and graphic elements.</p>
-                    <span class="project-tag-btn">BETA PROJECT</span>
+                    <p class="card-desc" data-i18n="desc.pawfreshy">Developed the visual branding for a pet clothing brand, including the brand identity, color palette, typography, and graphic elements.</p>
+                    <span class="project-tag-btn" data-i18n="tag.beta">BETA PROJECT</span>
                 </div>
             </div>
 
             <!-- Fila doble -->
             <div class="projects-row-double">
                 <div class="project-card" data-category="editorial">
-                    <img src="animacion.jpg" alt="Portada La animación no es un género">
+                    <img src="animacion.jpg" alt="La animación no es un género book cover" data-i18n-alt="alt.animacion">
                     <div class="card-content-overlay">
-                        <span class="tag-label">EDITORIAL DESIGN</span>
+                        <span class="tag-label" data-i18n="tag.editorial">EDITORIAL DESIGN</span>
                         <h3>LA ANIMACIÓN NO ES UN GÉNERO</h3>
-                        <p class="card-desc">Book cover design for a college project - front cover, back cover, and spine.</p>
+                        <p class="card-desc" data-i18n="desc.animacion">Book cover design for a college project - front cover, back cover, and spine.</p>
                     </div>
                 </div>
 
                 <div class="project-card" data-category="editorial">
-                    <img src="sea_of_thoughts.png" alt="Portada Sea of Thoughts">
+                    <img src="sea_of_thoughts.png" alt="Sea of Thoughts book cover" data-i18n-alt="alt.sea">
                     <div class="card-content-overlay">
-                        <span class="tag-label">EDITORIAL DESIGN</span>
+                        <span class="tag-label" data-i18n="tag.editorial">EDITORIAL DESIGN</span>
                         <h3>SEA OF THOUGHTS</h3>
-                        <p class="card-desc">Book cover design for a poetry collection - front cover, back cover, and spine.</p>
+                        <p class="card-desc" data-i18n="desc.sea">Book cover design for a poetry collection - front cover, back cover, and spine.</p>
                     </div>
                 </div>
             </div>
@@ -72,23 +82,23 @@
             <!-- Fila triple (posters) -->
             <div class="projects-row-triple">
                 <div class="project-card" data-category="poster">
-                    <img src="room-service.jpg" alt="Póster Room Service">
+                    <img src="room-service.jpg" alt="Room Service poster" data-i18n-alt="alt.room">
                     <div class="card-content-overlay">
-                        <span class="tag-label">POSTER</span>
+                        <span class="tag-label" data-i18n="tag.poster">POSTER</span>
                         <h3>ROOM SERVICE</h3>
                     </div>
                 </div>
                 <div class="project-card" data-category="poster">
-                    <img src="banco-ovulos.jpg" alt="Póster Banco de óvulos">
+                    <img src="banco-ovulos.jpg" alt="Banco de óvulos poster" data-i18n-alt="alt.banco">
                     <div class="card-content-overlay">
-                        <span class="tag-label">POSTER</span>
+                        <span class="tag-label" data-i18n="tag.poster">POSTER</span>
                         <h3>BANCO DE ÓVULOS</h3>
                     </div>
                 </div>
                 <div class="project-card" data-category="poster">
-                    <img src="la-barriga.jpg" alt="Póster La barriga">
+                    <img src="la-barriga.jpg" alt="La barriga poster" data-i18n-alt="alt.barriga">
                     <div class="card-content-overlay">
-                        <span class="tag-label">POSTER</span>
+                        <span class="tag-label" data-i18n="tag.poster">POSTER</span>
                         <h3>LA BARRIGA</h3>
                     </div>
                 </div>
@@ -96,11 +106,11 @@
 
             <!-- La Butaca Incómoda -->
             <div class="project-card" data-category="branding">
-                <img src="la-butaca.jpg" alt="Branding de La butaca incómoda">
+                <img src="la-butaca.jpg" alt="La butaca incómoda branding" data-i18n-alt="alt.butaca">
                 <div class="card-content-overlay">
-                    <span class="tag-label">BRANDING</span>
+                    <span class="tag-label" data-i18n="tag.branding">BRANDING</span>
                     <h3>LA BUTACA INCÓMODA</h3>
-                    <p class="card-desc">Developed the branding for a film criticism account, including a distinctive character to strengthen its visual identity and social media presence.</p>
+                    <p class="card-desc" data-i18n="desc.butaca">Developed the branding for a film criticism account, including a distinctive character to strengthen its visual identity and social media presence.</p>
                 </div>
             </div>
         </div>
@@ -108,29 +118,33 @@
 
     <!-- Frase llamativa -->
     <section class="banner-phrase">
-        <h2>MAKE THEM <span>STOP</span><br>MAKE THEM <span>LOOK</span><br>MAKE THEM <span>HOOK</span></h2>
+        <h2 class="phrase">
+            <span class="phrase-line" data-i18n-html="phrase.1">MAKE THEM <em>STOP</em></span>
+            <span class="phrase-line" data-i18n-html="phrase.2">MAKE THEM <em>LOOK</em></span>
+            <span class="phrase-line" data-i18n-html="phrase.3">MAKE THEM <em>HOOK</em></span>
+        </h2>
     </section>
 
     <!-- Sección About -->
     <section id="about" class="about-section">
         <div class="about-content">
             <div class="about-text">
-                <h2 class="about-title" data-text="ABOUT">ABOUT</h2>
-                <p>I'm Edith Goico, a Dominican graphic designer working across branding, editorial design, and poster design. I've worked on projects ranging from complete brand identities to editorial covers and theatrical posters, always looking for ways to turn ideas into clear and engaging visual work.</p>
-                <p>I have a technical degree in Audiovisuals and Entertainment and am currently pursuing a degree in Film and Multimedia Production. I currently work as a freelance designer, collaborating with clients and creatives.</p>
-                <p class="about-quote">Let's give shape to your ideas.</p>
+                <h2 class="about-title" data-text="ABOUT ME" data-i18n="about.title">ABOUT ME</h2>
+                <p data-i18n="about.p1">I'm Edith Goico, a Dominican graphic designer working across branding, editorial design, and poster design. I've worked on projects ranging from complete brand identities to editorial covers and theatrical posters, always looking for ways to turn ideas into clear and engaging visual work.</p>
+                <p data-i18n="about.p2">I have a technical degree in Audiovisuals and Entertainment and am currently pursuing a degree in Film and Multimedia Production. I currently work as a freelance designer, collaborating with clients and creatives.</p>
+                <p class="about-quote" data-i18n="about.quote">Let's give shape to your ideas.</p>
             </div>
             <div class="about-image-box">
                 <div class="photo-outline"></div>
                 <div class="photo-block"></div>
-                <img src="foto_persona.png" alt="Retrato de Edith Goico" class="about-photo">
+                <img src="foto_persona.png" alt="Portrait of Edith Goico" class="about-photo" data-i18n-alt="alt.portrait">
             </div>
         </div>
     </section>
 
     <!-- Sección Technical Skills & Services -->
     <section class="skills-section">
-        <h2 class="section-title skills-title">TECHNICAL <i>SKILLS</i></h2>
+        <h2 class="section-title skills-title" data-i18n-html="skills.title">TECHNICAL <i>SKILLS</i></h2>
 
         <div class="skills-wrap">
             <div class="software-card">
@@ -153,12 +167,12 @@
             </div>
 
             <div class="services-card">
-                <h3>SERVICES</h3>
+                <h3 data-i18n="services.title">SERVICES</h3>
                 <ul>
-                    <li>Branding</li>
-                    <li>Video Editing</li>
-                    <li>Social Media Content</li>
-                    <li>Editorial Design</li>
+                    <li data-i18n="svc.1">Branding</li>
+                    <li data-i18n="svc.2">Video Editing</li>
+                    <li data-i18n="svc.3">Social Media Content</li>
+                    <li data-i18n="svc.4">Editorial Design</li>
                 </ul>
             </div>
         </div>
@@ -167,11 +181,11 @@
     <!-- Footer / Contacto -->
     <footer id="contact" class="footer-section">
         <div class="footer-inner">
-            <span class="get-in-touch">GET IN TOUCH</span>
-            <h2 class="footer-title">Let's make something <i>worth remembering</i>.</h2>
+            <span class="get-in-touch" data-i18n="footer.kicker">GET IN TOUCH</span>
+            <h2 class="footer-title" data-i18n-html="footer.title">Let's make something <i>worth remembering</i>.</h2>
             <div class="footer-contact-grid">
                 <a class="contact-box" href="mailto:edithgoicova@gmail.com">
-                    <span class="contact-label">Email</span>
+                    <span class="contact-label" data-i18n="contact.email">Email</span>
                     <span class="contact-link">edithgoicova@gmail.com</span>
                     <span class="contact-arrow">↗</span>
                 </a>
@@ -184,8 +198,8 @@
         </div>
     </footer>
 
-    <!-- Filtros de proyectos -->
     <script>
+    /* ---------- Filtros de proyectos ---------- */
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             document.querySelector('.filter-btn.active').classList.remove('active');
@@ -196,6 +210,140 @@
             });
         });
     });
+
+    /* ---------- Traducción English / Español ---------- */
+    const translations = {
+        en: {
+            "meta.title": "Edith Goico | Film & Multimedia Portfolio",
+            "nav.work": "Work",
+            "nav.about": "About",
+            "nav.contact": "Contact",
+            "nav.hire": "Hire me",
+            "alt.hero": "Edith Goico, graphic designer. Portfolio",
+            "work.title": "Selected <i>work</i>",
+            "filter.all": "All",
+            "filter.branding": "Branding",
+            "filter.poster": "Poster",
+            "filter.editorial": "Editorial Design",
+            "tag.branding": "BRANDING",
+            "tag.editorial": "EDITORIAL DESIGN",
+            "tag.poster": "POSTER",
+            "tag.beta": "BETA PROJECT",
+            "alt.pawfreshy": "Pawfreshy branding",
+            "alt.animacion": "La animación no es un género book cover",
+            "alt.sea": "Sea of Thoughts book cover",
+            "alt.room": "Room Service poster",
+            "alt.banco": "Banco de óvulos poster",
+            "alt.barriga": "La barriga poster",
+            "alt.butaca": "La butaca incómoda branding",
+            "desc.pawfreshy": "Developed the visual branding for a pet clothing brand, including the brand identity, color palette, typography, and graphic elements.",
+            "desc.animacion": "Book cover design for a college project - front cover, back cover, and spine.",
+            "desc.sea": "Book cover design for a poetry collection - front cover, back cover, and spine.",
+            "desc.butaca": "Developed the branding for a film criticism account, including a distinctive character to strengthen its visual identity and social media presence.",
+            "phrase.1": "MAKE THEM <em>STOP</em>",
+            "phrase.2": "MAKE THEM <em>LOOK</em>",
+            "phrase.3": "MAKE THEM <em>HOOK</em>",
+            "about.title": "ABOUT ME",
+            "about.p1": "I'm Edith Goico, a Dominican graphic designer working across branding, editorial design, and poster design. I've worked on projects ranging from complete brand identities to editorial covers and theatrical posters, always looking for ways to turn ideas into clear and engaging visual work.",
+            "about.p2": "I have a technical degree in Audiovisuals and Entertainment and am currently pursuing a degree in Film and Multimedia Production. I currently work as a freelance designer, collaborating with clients and creatives.",
+            "about.quote": "Let's give shape to your ideas.",
+            "alt.portrait": "Portrait of Edith Goico",
+            "skills.title": "TECHNICAL <i>SKILLS</i>",
+            "services.title": "SERVICES",
+            "svc.1": "Branding",
+            "svc.2": "Video Editing",
+            "svc.3": "Social Media Content",
+            "svc.4": "Editorial Design",
+            "footer.kicker": "GET IN TOUCH",
+            "footer.title": "Let's make something <i>worth remembering</i>.",
+            "contact.email": "Email"
+        },
+        es: {
+            "meta.title": "Edith Goico | Portafolio de Cine y Multimedia",
+            "nav.work": "Trabajos",
+            "nav.about": "Sobre mí",
+            "nav.contact": "Contacto",
+            "nav.hire": "Contrátame",
+            "alt.hero": "Edith Goico, diseñadora gráfica. Portfolio",
+            "work.title": "Trabajos <i>seleccionados</i>",
+            "filter.all": "Todos",
+            "filter.branding": "Branding",
+            "filter.poster": "Afiches",
+            "filter.editorial": "Diseño editorial",
+            "tag.branding": "BRANDING",
+            "tag.editorial": "DISEÑO EDITORIAL",
+            "tag.poster": "AFICHE",
+            "tag.beta": "PROYECTO BETA",
+            "alt.pawfreshy": "Branding de Pawfreshy",
+            "alt.animacion": "Portada de La animación no es un género",
+            "alt.sea": "Portada de Sea of Thoughts",
+            "alt.room": "Afiche de Room Service",
+            "alt.banco": "Afiche de Banco de óvulos",
+            "alt.barriga": "Afiche de La barriga",
+            "alt.butaca": "Branding de La butaca incómoda",
+            "desc.pawfreshy": "Desarrollé la identidad visual de una marca de ropa para mascotas, incluyendo la identidad de marca, la paleta de colores, la tipografía y los elementos gráficos.",
+            "desc.animacion": "Diseño de portada de libro para un proyecto universitario - portada, contraportada y lomo.",
+            "desc.sea": "Diseño de portada de libro para una colección de poesía - portada, contraportada y lomo.",
+            "desc.butaca": "Desarrollé el branding de una cuenta de crítica de cine, incluyendo un personaje distintivo para fortalecer su identidad visual y su presencia en redes sociales.",
+            "phrase.1": "HAZ QUE SE <em>DETENGAN</em>",
+            "phrase.2": "HAZ QUE <em>MIREN</em>",
+            "phrase.3": "HAZ QUE SE <em>ENGANCHEN</em>",
+            "about.title": "SOBRE MÍ",
+            "about.p1": "Soy Edith Goico, diseñadora gráfica dominicana que trabaja en branding, diseño editorial y diseño de afiches. He trabajado en proyectos que van desde identidades de marca completas hasta portadas editoriales y afiches teatrales, siempre buscando la manera de convertir ideas en trabajos visuales claros y atractivos.",
+            "about.p2": "Tengo un título técnico en Audiovisuales y Entretenimiento y actualmente curso la carrera de Producción de Cine y Multimedia. Trabajo como diseñadora freelance, colaborando con clientes y creativos.",
+            "about.quote": "Démosle forma a tus ideas.",
+            "alt.portrait": "Retrato de Edith Goico",
+            "skills.title": "HABILIDADES <i>TÉCNICAS</i>",
+            "services.title": "SERVICIOS",
+            "svc.1": "Branding",
+            "svc.2": "Edición de video",
+            "svc.3": "Contenido para redes sociales",
+            "svc.4": "Diseño editorial",
+            "footer.kicker": "PONTE EN CONTACTO",
+            "footer.title": "Hagamos algo <i>que valga la pena recordar</i>.",
+            "contact.email": "Correo"
+        }
+    };
+
+    function setLang(lang) {
+        const dict = translations[lang];
+        document.documentElement.lang = lang;
+        document.title = dict["meta.title"];
+
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            el.textContent = dict[el.dataset.i18n];
+        });
+        document.querySelectorAll('[data-i18n-html]').forEach(el => {
+            el.innerHTML = dict[el.dataset.i18nHtml];
+        });
+        document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+            el.alt = dict[el.dataset.i18nAlt];
+        });
+
+        // La sombra rosa del título de About copia el texto del título
+        const aboutTitle = document.querySelector('.about-title');
+        aboutTitle.dataset.text = aboutTitle.textContent;
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            const on = btn.dataset.lang === lang;
+            btn.classList.toggle('active', on);
+            btn.setAttribute('aria-pressed', on);
+        });
+
+        try { localStorage.setItem('lang', lang); } catch (e) {}
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => setLang(btn.dataset.lang));
+    });
+
+    // Idioma inicial. Usa el que la persona eligió antes, y si no, el idioma de su navegador
+    let startLang = null;
+    try { startLang = localStorage.getItem('lang'); } catch (e) {}
+    if (startLang !== 'en' && startLang !== 'es') {
+        startLang = (navigator.language || '').toLowerCase().startsWith('es') ? 'es' : 'en';
+    }
+    setLang(startLang);
     </script>
 
 </body>
