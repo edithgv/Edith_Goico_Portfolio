@@ -19,20 +19,9 @@
         <a href="#contact" class="hire-btn">Hire me</a>
     </nav>
 
-    <!-- Sección Hero / Portada -->
+    <!-- Portada -->
     <header class="hero-section">
-        <div class="hero-top-labels">
-            <span class="category-tag">GRAPHIC DESIGN</span>
-            <span class="category-tag">BRANDING / POSTER / EDITORIAL</span>
-        </div>
-        <div class="hero-main-title">
-            <h1>PORT <span class="pink-text">FOLIO</span> <span class="year-badge">26</span></h1>
-        </div>
-        <div class="hero-footer-labels">
-            <span class="sub-label">VISUAL DESIGN</span>
-            <div class="arrow-down">↓</div>
-            <span class="name-badge">EDITH GOICO</span>
-        </div>
+        <img src="portada_portfolio.jpg" alt="Edith Goico, diseñadora gráfica. Portfolio" class="hero-img">
     </header>
 
     <!-- Sección de Proyectos -->
@@ -48,56 +37,56 @@
         </div>
 
         <div class="projects-grid">
-            <!-- Proyecto 1: Pawfreshy -->
-            <div class="project-card card-pawfreshy" data-category="branding">
+            <!-- Pawfreshy -->
+            <div class="project-card" data-category="branding">
+                <img src="pawfreshy.jpg" alt="Branding de Pawfreshy">
                 <div class="card-content-overlay">
-                    <div class="card-meta">
-                        <span class="tag-label">BRANDING</span>
-                        <h3>PAWFRESHY</h3>
-                    </div>
+                    <span class="tag-label">BRANDING</span>
+                    <h3>PAWFRESHY</h3>
                     <p class="card-desc">Developed the visual branding for a pet clothing brand, including the brand identity, color palette, typography, and graphic elements.</p>
                     <a href="#" class="project-tag-btn">BETA PROJECT</a>
                 </div>
             </div>
 
-            <!-- Fila Doble -->
+            <!-- Fila doble -->
             <div class="projects-row-double">
-                <div class="project-card card-animacion" data-category="editorial">
+                <div class="project-card" data-category="editorial">
+                    <img src="animacion.jpg" alt="Portada La animación no es un género">
                     <div class="card-content-overlay">
-                        <div class="card-meta">
-                            <span class="tag-label">EDITORIAL DESIGN</span>
-                            <h3>LA ANIMACIÓN NO ES UN GÉNERO</h3>
-                        </div>
+                        <span class="tag-label">EDITORIAL DESIGN</span>
+                        <h3>LA ANIMACIÓN NO ES UN GÉNERO</h3>
                         <p class="card-desc">Book cover design for a college project - front cover, back cover, and spine.</p>
                     </div>
                 </div>
 
-                <div class="project-card card-sea" data-category="editorial">
+                <div class="project-card" data-category="editorial">
+                    <img src="sea-of-thoughts.jpg" alt="Portada Sea of Thoughts">
                     <div class="card-content-overlay">
-                        <div class="card-meta">
-                            <span class="tag-label">EDITORIAL DESIGN</span>
-                            <h3>SEA OF THOUGHTS</h3>
-                        </div>
+                        <span class="tag-label">EDITORIAL DESIGN</span>
+                        <h3>SEA OF THOUGHTS</h3>
                         <p class="card-desc">Book cover design for a poetry collection - front cover, back cover, and spine.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Fila Triple (Posters) -->
+            <!-- Fila triple (posters) -->
             <div class="projects-row-triple">
-                <div class="project-card card-roomservice" data-category="poster">
+                <div class="project-card" data-category="poster">
+                    <img src="room-service.jpg" alt="Póster Room Service">
                     <div class="card-content-overlay">
                         <span class="tag-label">POSTER</span>
                         <h3>ROOM SERVICE</h3>
                     </div>
                 </div>
-                <div class="project-card card-banco" data-category="poster">
+                <div class="project-card" data-category="poster">
+                    <img src="banco-ovulos.jpg" alt="Póster Banco de óvulos">
                     <div class="card-content-overlay">
                         <span class="tag-label">POSTER</span>
                         <h3>BANCO DE ÓVULOS</h3>
                     </div>
                 </div>
-                <div class="project-card card-barriga" data-category="poster">
+                <div class="project-card" data-category="poster">
+                    <img src="la-barriga.jpg" alt="Póster La barriga">
                     <div class="card-content-overlay">
                         <span class="tag-label">POSTER</span>
                         <h3>LA BARRIGA</h3>
@@ -105,13 +94,12 @@
                 </div>
             </div>
 
-            <!-- Proyecto 7: La Butaca -->
-            <div class="project-card card-butaca" data-category="branding">
+            <!-- La Butaca Incómoda -->
+            <div class="project-card" data-category="branding">
+                <img src="la-butaca.jpg" alt="Branding de La butaca incómoda">
                 <div class="card-content-overlay">
-                    <div class="card-meta">
-                        <span class="tag-label">BRANDING</span>
-                        <h3>LA BUTACA INCÓMODA</h3>
-                    </div>
+                    <span class="tag-label">BRANDING</span>
+                    <h3>LA BUTACA INCÓMODA</h3>
                     <p class="card-desc">Developed the branding for a film criticism account, including a distinctive character to strengthen its visual identity and social media presence.</p>
                     <a href="#" class="project-tag-btn">SOCIAL MEDIA CONTENT</a>
                 </div>
@@ -181,6 +169,20 @@
             </div>
         </div>
     </footer>
+
+    <!-- Filtros de proyectos -->
+    <script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelector('.filter-btn.active').classList.remove('active');
+            btn.classList.add('active');
+            const f = btn.dataset.filter;
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.style.display = (f === 'all' || card.dataset.category === f) ? '' : 'none';
+            });
+        });
+    });
+    </script>
 
 </body>
 </html>
