@@ -31,7 +31,9 @@
 
     <!-- Portada -->
     <header class="hero-section">
-        <img src="portada_portfolio.jpg" alt="Edith Goico, graphic designer. Portfolio" class="hero-img" data-i18n-alt="alt.hero">
+        <!-- La imagen se asigna según el idioma (ver setLang). Así solo se descarga una portada -->
+        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Edith Goico, graphic designer. Portfolio" class="hero-img" style="aspect-ratio: 5693 / 3200;" data-i18n-alt="alt.hero" data-src-en="cover_english.jpg" data-src-es="portada_portfolio.jpg">
+        <noscript><img src="cover_english.jpg" alt="Edith Goico, graphic designer. Portfolio" class="hero-img"></noscript>
     </header>
 
     <!-- Sección de Proyectos -->
@@ -319,6 +321,11 @@
         document.querySelectorAll('[data-i18n-alt]').forEach(el => {
             el.alt = dict[el.dataset.i18nAlt];
         });
+
+        // La portada cambia de imagen según el idioma. Español usa portada_portfolio.jpg e inglés usa cover_english.jpg
+        const heroImg = document.querySelector('.hero-img');
+        const heroSrc = lang === 'es' ? heroImg.dataset.srcEs : heroImg.dataset.srcEn;
+        if (heroImg.getAttribute('src') !== heroSrc) heroImg.setAttribute('src', heroSrc);
 
         // La sombra rosa del título de About copia el texto del título
         const aboutTitle = document.querySelector('.about-title');
